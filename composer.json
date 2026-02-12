@@ -1,0 +1,25 @@
+{
+    "name" : "raxon/docker",
+    "description" : "raxon/docker see https://raxon.org for detailed usage",
+    "type" : "package",
+    "keywords" : ["node", "raxon", "org", "keyboard", "package", "framework", "raxon.org", "docker"],
+    "homepage": "https://raxon.org",
+    "require": {
+        "raxon/framework": ">=2026.01.01",
+        "raxon/test": ">=2026.01.01"
+    },
+    "license" : "MIT",
+    "authors" : [{
+        "name" : "Remco van der Velde",
+        "email" : "development@universeorange.com"
+    }],
+    "prefer-stable": true,
+    "require-dev": {
+        "phpstan/phpstan": "^1.10"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
