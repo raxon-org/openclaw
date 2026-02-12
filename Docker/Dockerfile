@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install apache2 \
     sqlite3 \
     libapache2-mod-fcgid -y
 
-RUN curl -fsSL https://openclaw.ai/install.sh | bash
+# RUN curl -fsSL https://openclaw.ai/install.sh | bash #error
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
 COPY . /Application
