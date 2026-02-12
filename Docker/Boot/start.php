@@ -14,5 +14,5 @@ if(file_exists($url)){
 }
 //keep init process running with pid 1
 while(true){
-    sleep(1000);
+    sleep(60);
 }
