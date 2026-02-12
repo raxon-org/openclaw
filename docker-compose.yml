@@ -13,8 +13,8 @@ services:
       - /tmp/raxon/org
     command: ['/usr/bin/init']
     ports:
-      - "80:80"
-      - "443:443"
+      - "5004:80"
+      - "5005:443"
     networks:
       - raxon-org-network
 networks:
