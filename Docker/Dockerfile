@@ -53,7 +53,7 @@ RUN php /Application/Bin/Raxon.php bin app
 RUN app install raxon/boot -skip=cache-clear
 RUN app install raxon/ollama
 RUN app raxon/ollama start
-RUN sleep 2 && ollama pull qwen3-vl:4b
+# RUN sleep 2 && ollama pull qwen3-vl:4b
 # Execute start script
 RUN chmod +x /Application/start.sh
 RUN sh /Application/start.sh
