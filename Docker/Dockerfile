@@ -3,7 +3,7 @@ WORKDIR /Application
 
 # Update & upgrade
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget curl nano php -y
+RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano php -y
 
 # init
 COPY ./Docker/Boot/start.php /usr/bin/start
@@ -41,11 +41,7 @@ RUN apt-get update && apt-get install apache2 \
     php8.4-xml \
     php8.4-sqlite3 \
     sqlite3 \
-    libapache2-mod-fcgid \
-    zstd -y
-
-# RUN curl -fsSL https://openclaw.ai/install.sh | bash #error
-# RUN curl -fsSL https://ollama.com/install.sh | sh
+    libapache2-mod-fcgid -y
 
 COPY . /Application
 
