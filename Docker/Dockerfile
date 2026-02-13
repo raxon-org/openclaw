@@ -44,6 +44,8 @@ RUN apt-get update && apt-get install apache2 \
 
 COPY . /Application
 RUN curl -fsSL https://ollama.com/install.sh | sh
+RUN npm install -g npm
+RUN npm install -g node
 RUN npm install -g openclaw@latest
 # Execute start script
 RUN chmod +x /Application/start.sh
