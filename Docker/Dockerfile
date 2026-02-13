@@ -9,21 +9,19 @@ RUN chmod +x /usr/bin/start
 
 # Update & upgrade
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano php -y
+RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano curl -y
 
 # composer
-# COPY ./Docker/Packages/composer/composer.phar /usr/bin/composer
-# RUN chmod +x /usr/bin/composer
-# RUN chown www-data:www-data /usr/bin/composer
-# RUN composer self-update
+COPY ./Docker/Packages/composer/composer.phar /usr/bin/composer
+RUN chmod +x /usr/bin/composer
+RUN chown www-data:www-data /usr/bin/composer
+RUN composer self-update
 
 # ffmpeg
 #RUN apt-get update && apt-get install ffmpeg -y
 
-# RUN apt-get update && apt-get install \
-#    git -y
-
 RUN apt-get update && apt-get install apache2 \
+   git \
    php8.4 \
    php8.4-fpm \
    php8.4-common \
@@ -39,6 +37,7 @@ RUN apt-get update && apt-get install apache2 \
    php8.4-zip \
    php8.4-xml \
    php8.4-sqlite3 \
+   php8.4-ssh2 \
    sqlite3 \
    libapache2-mod-fcgid -y
 
