@@ -5,6 +5,8 @@ WORKDIR /Application
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano php -y
 
+COPY . /Application
+
 # init
 COPY ./Docker/Boot/start.php /usr/bin/start
 COPY ./Docker/Boot/init /usr/bin/init
@@ -41,8 +43,6 @@ RUN chmod +x /usr/bin/start
 #    php8.4-sqlite3 \
 #    sqlite3 \
 #    libapache2-mod-fcgid -y
-
-COPY . /Application
 
 # Execute start script
 RUN chmod +x /Application/start.sh
