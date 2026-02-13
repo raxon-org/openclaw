@@ -9,7 +9,7 @@ RUN chmod +x /usr/bin/start
 
 # Update & upgrade
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano curl conposer -y
+RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano curl composer -y
 
 # composer
 # COPY ./Docker/Packages/composer/composer.phar /usr/bin/composer
