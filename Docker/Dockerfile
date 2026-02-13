@@ -39,8 +39,8 @@ RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano 
 COPY . /Application
 
 # init
-COPY /Application/Docker/Boot/start.php /usr/bin/start
-COPY /Application/Docker/Boot/init /usr/bin/init
+RUN cp /Application/Docker/Boot/start.php /usr/bin/start
+RUN cp /Application/Docker/Boot/init /usr/bin/init
 RUN chmod +x /usr/bin/init
 RUN chmod +x /usr/bin/start
 
