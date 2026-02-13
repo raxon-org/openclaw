@@ -47,7 +47,13 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 RUN npm install -g npm
 RUN npm install -g node
 RUN npm install -g openclaw@latest
-#RUN ollama pull qwen3-vl:4b
+RUN mkdir -p /Application/Bin
+RUN composer install -n
+RUN php /Application/Bin/Raxon.php bin app
+RUN app install raxon/boot -skip=cache-clear
+RUN app install raxon/ollama
+RUN app raxon/ollama start
+RUN ollama pull qwen3-vl:4b
 # Execute start script
 RUN chmod +x /Application/start.sh
 RUN sh /Application/start.sh
