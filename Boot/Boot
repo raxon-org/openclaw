@@ -2,3 +2,4 @@ service php8.4-fpm start
 service apache2 start
 service cron start -f
 /usr/bin/app reset -application
+/usr/bin/app raxon/ollama start
