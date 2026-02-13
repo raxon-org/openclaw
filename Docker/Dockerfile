@@ -47,7 +47,7 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 RUN npm install -g npm
 RUN npm install -g node
 RUN npm install -g openclaw@latest
-RUN ollama pull qwen3-vl:4b
+#RUN ollama pull qwen3-vl:4b
 # Execute start script
 RUN chmod +x /Application/start.sh
 RUN sh /Application/start.sh
