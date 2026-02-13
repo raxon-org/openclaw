@@ -9,13 +9,13 @@ RUN chmod +x /usr/bin/start
 
 # Update & upgrade
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano curl -y
+RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano curl conposer -y
 
 # composer
-COPY ./Docker/Packages/composer/composer.phar /usr/bin/composer
-RUN chmod +x /usr/bin/composer
-RUN chown www-data:www-data /usr/bin/composer
-RUN composer self-update
+# COPY ./Docker/Packages/composer/composer.phar /usr/bin/composer
+# RUN chmod +x /usr/bin/composer
+# RUN chown www-data:www-data /usr/bin/composer
+# RUN composer self-update
 
 # ffmpeg
 #RUN apt-get update && apt-get install ffmpeg -y
