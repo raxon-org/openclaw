@@ -1,6 +1,12 @@
 FROM debian:13.2
 WORKDIR /Application
 
+# init
+COPY ./Docker/Boot/start.php /usr/bin/start
+COPY ./Docker/Boot/init /usr/bin/init
+RUN chmod +x /usr/bin/init
+RUN chmod +x /usr/bin/start
+
 # Update & upgrade
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano php -y
@@ -37,12 +43,6 @@ RUN apt-get update && apt-get install init bash cron libzip-dev unzip wget nano 
 #    libapache2-mod-fcgid -y
 
 COPY . /Application
-
-# init
-RUN cp /Application/Docker/Boot/start.php /usr/bin/start
-RUN cp /Application/Docker/Boot/init /usr/bin/init
-RUN chmod +x /usr/bin/init
-RUN chmod +x /usr/bin/start
 
 # Execute start script
 RUN chmod +x /Application/start.sh
