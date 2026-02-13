@@ -15,7 +15,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "5007:18789"
+      - "18789:18789"
     networks:
       - raxon-org-network
 networks:
